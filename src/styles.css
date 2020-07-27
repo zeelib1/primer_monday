@@ -1,0 +1,257 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  font-family: "Roboto Mono", monospace;
+}
+body {
+}
+
+/* body #background-image {
+  background-image: url("");
+  color: white;
+} */
+
+/* HEADER */
+header {
+  padding-right: 3em;
+  background-image: url("../img/writing.jpg");
+
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+.flex-container {
+  display: flex;
+}
+ul {
+  list-style: none;
+}
+
+.nav-flex img {
+  margin-left: 2.5em;
+}
+
+li.flex-item {
+  /* margin-left: auto; */
+  margin-top: 0.975em;
+}
+.nav-flex {
+  display: flex;
+}
+nav img {
+  margin-left: 1em;
+}
+
+.flex-container {
+  display: flex;
+  margin-left: auto;
+}
+
+.flex-item a {
+  text-decoration: none;
+  color: black;
+  margin-right: 1em;
+  font-weight: normal;
+  letter-spacing: 0.25em;
+}
+.flex-item a:hover {
+  border-bottom: 1px solid #363232;
+  opacity: 0.8;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* GRID */
+.grid-main-container {
+  display: grid;
+  grid-template-columns: 100px 400px auto;
+
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+.section-article-one {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  /* background-color: blue; */
+}
+
+.section-article-two {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.section-article-three {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.section-flex-container-one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-flex-container-two {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.section-flex-container-three {
+  display: flex;
+}
+
+/* SIDEBAR */
+.grid-container-aside {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  /* align-self: center; */
+
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+.flex-aside-item {
+  justify-content: center;
+  align-self: center;
+}
+
+.aside-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* MAIN STYLE */
+main {
+  margin-top: 1em;
+  margin-right: 2em;
+  background-image: url("../img/writing.jpg");
+
+  background-size: 70%;
+
+  background-repeat: no-repeat;
+  /* background-position-x: 40em;*/
+  background-position-y: 1.5em;
+  transform: rotate(2deg);
+}
+
+.section-paragraph {
+  font-weight: 300;
+  text-align: justify;
+  transform: rotate(3deg);
+}
+
+.section-div-container {
+  padding: 3em;
+}
+
+.section-div-container img {
+  object-fit: cover;
+  height: 100vh;
+  width: 40%;
+}
+
+.section-div-container > .article-div > .article-link {
+  text-align: center;
+  text-decoration: none;
+}
+
+.section-div-container > .article-div {
+  z-index: 1;
+}
+
+/* ANIMATION start */
+.inline-photo {
+  border: 1em solid #fff;
+  border-bottom: 4em solid #fff;
+  border-radius: 0.25em;
+  box-shadow: 1em 1em 2em 0.25em rgba(0, 0, 0, 0.2);
+  margin: 2em auto;
+  opacity: 0;
+  transform: translateY(4em) rotateZ(-5deg);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  max-width: 600px;
+  width: 90%;
+  will-change: transform, opacity;
+}
+
+.inline-photo.is-visible {
+  opacity: 1;
+  transform: rotateZ(-2deg);
+}
+
+/* ANIMATION END */
+#h1-title {
+  font-family: "Roboto Mono" monospace;
+  position: relative;
+  margin-left: 5em;
+  text-transform: lowercase;
+  font-size: 1.4em;
+  font-weight: lighter;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(104, 93, 93, 0.633);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+/* DROPDOWN HEADER
+ */
+
+.dropbtn {
+  background-color: #454b50;
+  color: white;
+  padding: 1em;
+
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #757779;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  padding: 1em;
+  right: 0px;
+  top: 80px;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
