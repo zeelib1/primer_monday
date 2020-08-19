@@ -1,6 +1,6 @@
 :root {
   box-sizing: border-box;
-  overflow:hidden;
+  
 }
 
 *,
@@ -10,6 +10,7 @@
   font-family: "Roboto Mono", monospace;
 }
 body {
+  overflow-x:hidden;
 }
 
 /* body #background-image {
